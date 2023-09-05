@@ -1,0 +1,8 @@
+---
+Name: faqpagelegacy
+---
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    FAQPage: Logicbrush\FaqPage\Model\FAQPage
+    Question: Logicbrush\FaqPage\Model\Question
+    QuestionTag: Logicbrush\FaqPage\Model\QuestionTag

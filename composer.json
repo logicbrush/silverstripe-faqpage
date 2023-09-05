@@ -13,19 +13,39 @@
 		"email": "jflearn@logicbrush.com"
 	}],
 	"require": {
-		"silverstripe/cms": "^4.0"
-	},
-	"extra": {
-		"expose": [
-			"thirdparty"
-		]
+		"php": "^7.4||^8.0",
+		"silverstripe/cms": "^4.0",
+		"silverstripe/lumberjack": "^2.3",
+		"symbiote/silverstripe-gridfieldextensions": "^3.6"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "^5.7"
+		"cmrcx/phptidy": "^3.3",
+		"logicbrush/metrics": "^0.2.0",
+		"phpunit/phpunit": "^9.5",
+		"silverstripe/sqlite3": "^2.2"
 	},
 	"autoload": {
 		"psr-4": {
 			"Logicbrush\\FAQPage\\": "src/"
 		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Logicbrush\\FAQPage\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"expose": [
+			"css",
+			"images",
+			"javascript"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"silverstripe/vendor-plugin": true
+		},
+		"sort-packages": true
 	}
 }
