@@ -5,6 +5,7 @@ namespace Logicbrush\FAQPage\Tests;
 
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\Control\Director;
+use Logicbrush\FAQPage\Model\FAQPage;
 use Logicbrush\FAQPage\Model\Question;
 use Logicbrush\FAQPage\Model\QuestionTag;
 
