@@ -28,7 +28,7 @@ use SilverStripe\View\Requirements;
 
 class FAQPage extends Page {
 
-	private static string $icon = 'mysite/images/treeicons/faq-page.png';
+	private static string $icon_class = 'font-icon-chat';
 	private static string $description = 'An faq page that rolls up content from its question children pages.';
 	private static string $singular_name = 'FAQ';
 	private static string $plural_name = 'FAQs';
