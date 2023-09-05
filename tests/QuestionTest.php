@@ -1,4 +1,10 @@
 <?php
+/**
+ * tests/QuestionTest.php
+ *
+ * @package default
+ */
+
 
 namespace Logicbrush\FAQPage\Tests;
 

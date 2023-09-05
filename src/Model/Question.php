@@ -1,4 +1,10 @@
 <?php
+/**
+ * src/Model/Question.php
+ *
+ * @package default
+ */
+
 
 namespace Logicbrush\FAQPage\Model;
 
