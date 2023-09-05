@@ -101,7 +101,7 @@ class QuestionTest extends FunctionalTest
 		$questionTag->write();
 
 		$this->assertEquals( '/faqs/tag/the-future-is-female', $questionTag->Link() );
-		$this->assertEquals( Director::config()->alternate_base_url . 'faqs/tag/the-future-is-female', $questionTag->AbsoluteLink() );
+		$this->assertEquals( 'http://localhost/faqs/tag/the-future-is-female', $questionTag->AbsoluteLink() );
 	}
 
 
