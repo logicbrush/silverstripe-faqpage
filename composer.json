@@ -16,6 +16,7 @@
 		"php": "^7.4||^8.0",
 		"silverstripe/cms": "^4.0",
 		"silverstripe/lumberjack": "^2.3",
+		"silverstripe/tagfield": "^2.11",
 		"symbiote/silverstripe-gridfieldextensions": "^3.6"
 	},
 	"require-dev": {
