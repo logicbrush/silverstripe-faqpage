@@ -201,7 +201,7 @@ class FAQPageController extends PageController {
 
 		if ( ! $hideForm ) {
 			$content = $this->Content;
-			$content = '<form class="faq-filter-form"><input class="faq-filter" placeholder="Enter keywords..." value="' . htmlentities( $searchText ) . '" /></form>';
+			$content = '<form class="faq-filter-form"><input type="text" class="faq-filter" placeholder="Enter keywords..." value="' . htmlentities( $searchText ) . '" /></form>';
 		} else {
 			$content = '<h2>' . htmlentities( $this->Title ) . '</h2>';
 		}
