@@ -132,8 +132,8 @@ class FAQPageController extends PageController {
 	 */
 	public function index() {
 
-		Requirements::javascript( 'logicbrush/faqpage:client/dist/js/faq.js' );
-		Requirements::css( 'logicbrush/faqpage:client/dist/css/faq.css' );
+		Requirements::javascript('logicbrush/silverstripe-faqpage:client/dist/js/faq.js');
+		Requirements::css('logicbrush/silverstripe-faqpage:client/dist/css/faq.css');
 
 		$content = $this->AdvancedContent( Question::get()->filter( ['ParentID' => $this->ID] ), false, false );
 
