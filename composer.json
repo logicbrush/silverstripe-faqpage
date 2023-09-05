@@ -1,0 +1,31 @@
+{
+	"name": "logicbrush/silverstripe-faqpage",
+	"description": "A module for the SilverStripe CMS which allows you to construct a list of frequently-asked questions.",
+	"homepage": "https://www.logicbrush.com/specialities/silverstripe-development/",
+	"type": "silverstripe-vendormodule",
+	"keywords": [
+		"silverstripe",
+		"faq"
+	],
+	"license": "BSD-3-Clause",
+	"authors": [{
+		"name": "John Learn",
+		"email": "jflearn@logicbrush.com"
+	}],
+	"require": {
+		"silverstripe/cms": "^4.0"
+	},
+	"extra": {
+		"expose": [
+			"thirdparty"
+		]
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^5.7"
+	},
+	"autoload": {
+		"psr-4": {
+			"Logicbrush\\FAQPage\\": "src/"
+		}
+	}
+}
