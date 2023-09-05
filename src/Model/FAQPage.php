@@ -30,7 +30,7 @@ class FAQPage extends Page {
 	private static $table_name = 'FAQPage';
 
 	private static array $allowed_children = [
-		'Question'
+		Question::class,
 	];
 
 	private static array $extensions = [
