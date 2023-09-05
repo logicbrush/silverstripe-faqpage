@@ -24,8 +24,7 @@ use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use Symbiote\GridFieldExtensions\GridFieldAddNewInlineButton;
 use SilverStripe\Forms\GridField\GridFieldDataColumns;
 use SilverStripe\ORM\FieldType\DBField;
-
-
+use SilverStripe\View\Requirements;
 
 class FAQPage extends Page {
 
@@ -132,6 +131,9 @@ class FAQPageController extends PageController {
 	 * @return unknown
 	 */
 	public function index() {
+
+		Requirements::javascript('logicbrush/faqpage:client/dist/js/faq.js');
+		Requirements::css('logicbrush/faqpage:client/dist/css/faq.css');
 
 		$content = $this->AdvancedContent( Question::get()->filter( ['ParentID' => $this->ID] ), false, false );
 

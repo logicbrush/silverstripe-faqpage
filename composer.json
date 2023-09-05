@@ -37,6 +37,7 @@
 	},
 	"extra": {
 		"expose": [
+			"client/dist"
 		]
 	},
 	"config": {
