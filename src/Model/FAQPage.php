@@ -215,7 +215,7 @@ class FAQPageController extends PageController {
 
 		foreach ( $this->Tags() as $tag ) {
 			if ( $tag->Questions()->count() ) {
-				$content .= '<h2 class="faq-section-heading"><a href="' . $tag->Link() . '">' . $tag->Title . '</a></h2>';
+				$content .= '<h2 class="faq-section-heading">' . $tag->Title . '</h2>';
 				$content .= $this->QuestionsContent( $tag->Questions() );
 			}
 		}

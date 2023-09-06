@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
    
-    /** FAQ filtering **/
+    /** FAQ filtering... **/
     jQuery('.faq-filter-form').on('submit', function(e) {
         e.preventDefault();
     });
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
         });
     }).trigger('change.faq-filter');
 
-    /** Accordian behavior */
+    /** Accordian behavior... */
     jQuery('.faq-table-of-contents>li>a').each(function() {
         $(this).on('click', function() {
             $(this).next().toggleClass('hidden');
