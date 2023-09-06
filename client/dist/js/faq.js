@@ -1,10 +1,9 @@
 jQuery(document).ready(function() {
    
-    /** FAQ filter **/
+    /** FAQ filtering **/
     jQuery('.faq-filter-form').on('submit', function(e) {
         e.preventDefault();
     });
-
     jQuery('.faq-filter').on('keyup.faq-filter, change.faq-filter', function() {
         var searchVal = jQuery(this).val().toLowerCase();
         var faqTableOfContents = jQuery('.faq-table-of-contents');
@@ -29,5 +28,13 @@ jQuery(document).ready(function() {
             }
         });
     }).trigger('change.faq-filter');
+
+    /** Accordian behavior */
+    jQuery('.faq-table-of-contents>li>a').each(function() {
+        $(this).on('click', function() {
+            $(this).next().toggleClass('hidden');
+            return false;
+        });
+    });
 
 });

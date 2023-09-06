@@ -199,7 +199,7 @@ class FAQPageController extends PageController {
 	 */
 	private function AdvancedContent( $questions = [], $hideForm = false, $isTag = false ) {
 
-		$searchText = $this->request->getVar( 'search' );
+		$searchText = $this->request->getVar( 'search' ) ?? '';
 
 		if ( ! $hideForm ) {
 			$content = $this->Content;
@@ -244,7 +244,7 @@ class FAQPageController extends PageController {
 			$questionContent = $question->hasMethod( 'Content' ) ? $question->Content() : $question->Content;
 			if ( $questionContent ) {
 				$content .= '<li><a href="' . $question->Link() . '">' . $question->MenuTitle . '</a>';
-				$content .= '<div class="content">';
+				$content .= '<div class="content hidden">';
 				$content .= $questionContent;
 				$content .= '</div>';
 				$content .= '</li>';

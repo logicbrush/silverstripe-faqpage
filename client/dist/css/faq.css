@@ -1,4 +1,5 @@
 .faq-section-heading.hidden,
-.faq-table-of-contents>li.hidden {
+.faq-table-of-contents>li.hidden,
+.faq-table-of-contents>li>.content.hidden {
     display: none;
 }
