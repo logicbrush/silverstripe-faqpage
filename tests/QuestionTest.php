@@ -1,10 +1,17 @@
 <?php
+/**
+ * tests/QuestionTest.php
+ *
+ * @package default
+ */
+
 
 namespace Logicbrush\FAQPage\Tests;
 
 
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\Control\Director;
+use Logicbrush\FAQPage\Model\FAQPage;
 use Logicbrush\FAQPage\Model\Question;
 use Logicbrush\FAQPage\Model\QuestionTag;
 
@@ -100,7 +107,7 @@ class QuestionTest extends FunctionalTest
 		$questionTag->write();
 
 		$this->assertEquals( '/faqs/tag/the-future-is-female', $questionTag->Link() );
-		$this->assertEquals( Director::config()->alternate_base_url . 'faqs/tag/the-future-is-female', $questionTag->AbsoluteLink() );
+		$this->assertEquals( 'http://localhost/faqs/tag/the-future-is-female', $questionTag->AbsoluteLink() );
 	}
 
 

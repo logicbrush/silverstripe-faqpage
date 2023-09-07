@@ -1,32 +1,22 @@
-# silverstripe-imagegallery
+# silverstripe-faqpage
 
-A module for the SilverStripe CMS which allows you to display a bunch of images
-in a gallery format.
+A module for the SilverStripe CMS which allows you to present a searchable list
+of frequently asked questions.
 
 ## Why?
 
-We needed a simple way to present a set of images that can be easily navigated
-on any device.
+We needed a simple way to present a set of searchable list of question/answer
+pairs.
 
 ## Installation
 
 ```sh
-composer require "logicbrush/silverstripe-imagegallery"
+composer require "logicbrush/silverstripe-faqpage"
 ```
 
 ## Usage
 
-Install the module and you'll have a new page type of "Gallery Page".  You can
-add and reorder images to the page from the "Images" tab in the CMS.
-
-In addition, this module provides a widget for displaying a gallery in a
-sidebar.  Add it to your WidgetArea and select the gallery you wish to display.
+Install the module and you'll have a new page type of "FAQ Page".  You can
+add child "Question" pages and manage them independently.
 
 
-## Configuration
-
-Select which column to sort the images by, via the "Sort By" dropdown.
-Selecting "Newest First" will sort the images by "Created" in DESC order.
-Selecting "Position" will sort the images by "SortOrder" in ASC order.
-
-Reordering the images manually will only have effect if "Position" is selected.

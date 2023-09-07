@@ -1,4 +1,10 @@
 <?php
+/**
+ * src/Model/Question.php
+ *
+ * @package default
+ */
+
 
 namespace Logicbrush\FAQPage\Model;
 
@@ -8,7 +14,7 @@ use SilverStripe\TagField\TagField;
 
 class Question extends Page {
 
-	private static string $icon = 'mysite/images/treeicons/question-page.png';
+	private static string $icon_class = 'font-icon-comment';
 	private static string $description = 'An faq question page.';
 	private static string $singular_name = 'Question';
 	private static string $plural_name = 'Questions';

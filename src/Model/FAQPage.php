@@ -1,4 +1,10 @@
 <?php
+/**
+ * src/Model/FAQPage.php
+ *
+ * @package default
+ */
+
 
 namespace Logicbrush\FAQPage\Model;
 
@@ -18,19 +24,18 @@ use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use Symbiote\GridFieldExtensions\GridFieldAddNewInlineButton;
 use SilverStripe\Forms\GridField\GridFieldDataColumns;
 use SilverStripe\ORM\FieldType\DBField;
-
-
+use SilverStripe\View\Requirements;
 
 class FAQPage extends Page {
 
-	private static string $icon = 'mysite/images/treeicons/faq-page.png';
+	private static string $icon_class = 'font-icon-chat';
 	private static string $description = 'An faq page that rolls up content from its question children pages.';
 	private static string $singular_name = 'FAQ';
 	private static string $plural_name = 'FAQs';
 	private static $table_name = 'FAQPage';
 
 	private static array $allowed_children = [
-		'Question'
+		Question::class,
 	];
 
 	private static array $extensions = [
@@ -127,6 +132,9 @@ class FAQPageController extends PageController {
 	 */
 	public function index() {
 
+		Requirements::javascript( 'logicbrush/silverstripe-faqpage:client/dist/js/faq.js' );
+		Requirements::css( 'logicbrush/silverstripe-faqpage:client/dist/css/faq.css' );
+
 		$content = $this->AdvancedContent( Question::get()->filter( ['ParentID' => $this->ID] ), false, false );
 
 		return [
@@ -191,11 +199,11 @@ class FAQPageController extends PageController {
 	 */
 	private function AdvancedContent( $questions = [], $hideForm = false, $isTag = false ) {
 
-		$searchText = $this->request->getVar( 'search' );
+		$searchText = $this->request->getVar( 'search' ) ?? '';
 
 		if ( ! $hideForm ) {
 			$content = $this->Content;
-			$content = '<form class="faq-filter-form"><input class="faq-filter" placeholder="Enter keywords..." value="' . htmlentities( $searchText ) . '" /></form>';
+			$content = '<form class="faq-filter-form"><input type="text" class="faq-filter" placeholder="Search the FAQ..." value="' . htmlentities( $searchText ) . '" /></form>';
 		} else {
 			$content = '<h2>' . htmlentities( $this->Title ) . '</h2>';
 		}
@@ -207,7 +215,7 @@ class FAQPageController extends PageController {
 
 		foreach ( $this->Tags() as $tag ) {
 			if ( $tag->Questions()->count() ) {
-				$content .= '<h2 class="faq-section-heading"><a href="' . $tag->Link() . '">' . $tag->Title . '</a></h2>';
+				$content .= '<h2 class="faq-section-heading">' . $tag->Title . '</h2>';
 				$content .= $this->QuestionsContent( $tag->Questions() );
 			}
 		}
@@ -236,7 +244,7 @@ class FAQPageController extends PageController {
 			$questionContent = $question->hasMethod( 'Content' ) ? $question->Content() : $question->Content;
 			if ( $questionContent ) {
 				$content .= '<li><a href="' . $question->Link() . '">' . $question->MenuTitle . '</a>';
-				$content .= '<div class="content">';
+				$content .= '<div class="content hidden">';
 				$content .= $questionContent;
 				$content .= '</div>';
 				$content .= '</li>';
